@@ -1,19 +1,40 @@
-import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
+import { motion } from 'framer-motion';
+import type { NextPage } from 'next';
+import Head from 'next/head';
+import { getStagger } from '../animations/stagger';
+import { fadeInUp } from '../animations/fadeInUp';
 
 const Home: NextPage = () => {
-  return (
-    <div>
-      <Head>
-        <title>Zac Eckert | Front End Engineer</title>
-        <meta name="description" content="Zac Eckert Portfolio" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+	return (
+		<>
+			<Head>
+				<title>Zac Eckert | Front End Engineer</title>
+				<meta name='description' content='Front End Engineer' />
+				<link rel='icon' href='/favicon.ico' />
+			</Head>
 
-      <main></main>
-    </div>
-  );
+			<div>
+				<motion.div
+					className='leftContent'
+					variants={getStagger(0.6)}
+					style={{ alignSelf: 'center' }}
+				>
+					<motion.div>
+						<motion.div variants={fadeInUp} style={{ alignSelf: 'center' }}>
+							<h1>Zachary Eckert</h1>
+						</motion.div>
+
+						<motion.div variants={fadeInUp}>
+							<h2>Front End Engineer</h2>
+						</motion.div>
+					</motion.div>
+				</motion.div>
+				<motion.div className='rightContent' style={{ alignSelf: 'center' }}>
+					Whats up
+				</motion.div>
+			</div>
+		</>
+	);
 };
 
 export default Home;

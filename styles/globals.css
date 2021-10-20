@@ -3,7 +3,13 @@
 @tailwind utilities;
 
 @layer components {
-  .test {
-    @apply relative flex text-center
-  }
+	.top-navigation-icon {
+		@apply transition duration-300 ease-in-out 
+    hover:text-pink-400 
+    cursor-pointer;
+	}
+}
+
+::-webkit-scrollbar {
+	background-color: transparent;
 }
