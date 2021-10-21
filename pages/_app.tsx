@@ -12,7 +12,8 @@ function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<AnimatePresence exitBeforeEnter>
 			<div
-				className='flex flex-col bg-gray-300 dark:bg-gray-900 m-0 h-full w-full overflow-hidden min-h-screen'
+				id='root'
+				className='flex flex-col bg-bg dark:bg-darkBg m-0 h-full w-full overflow-hidden min-h-screen'
 				key={router.route}
 			>
 				<Nav />
