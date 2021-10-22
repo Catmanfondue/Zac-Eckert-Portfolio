@@ -3,6 +3,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import { getStagger } from '../animations/stagger';
 import { fadeInUp } from '../animations/fadeInUp';
+import MainContent from '../components/MainContent';
 
 const Home: NextPage = () => {
 	return (
@@ -13,7 +14,7 @@ const Home: NextPage = () => {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 
-			<div>
+			<MainContent>
 				<motion.div
 					className='leftContent'
 					variants={getStagger(0.6)}
@@ -32,7 +33,7 @@ const Home: NextPage = () => {
 				<motion.div className='rightContent' style={{ alignSelf: 'center' }}>
 					Whats up
 				</motion.div>
-			</div>
+			</MainContent>
 		</>
 	);
 };

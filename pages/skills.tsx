@@ -6,6 +6,7 @@ import { getStagger } from '../animations/stagger';
 import SkillIcon from '../components/SkillIcon';
 import type { NextPage } from 'next';
 import useDarkMode from '../hooks/useDarkMode';
+import MainContent from '../components/MainContent';
 
 const Skills: NextPage = () => {
 	// const [techHighlighted, setTechHighlighted] = useState(null);
@@ -33,14 +34,7 @@ const Skills: NextPage = () => {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 
-			<div
-			// sx={{
-			//   display: "grid",
-			//   gridTemplateColumns: "1fr 1fr",
-			//   height: "100%",
-			//   gap: "1rem",
-			// }}
-			>
+			<MainContent>
 				<motion.div
 					className='leftContent'
 					variants={getStagger(0.6)}
@@ -99,7 +93,7 @@ const Skills: NextPage = () => {
 					//   height: "60%",
 					// }}
 					>
-						{techSkills.map((tech, i) => (
+						{/* {techSkills.map((tech, i) => (
 							<SkillIcon
 								key={tech}
 								name={tech}
@@ -108,10 +102,10 @@ const Skills: NextPage = () => {
 								colNums={colNums}
 								theme={currentTheme}
 							/>
-						))}
+						))} */}
 					</div>
 				</motion.div>
-			</div>
+			</MainContent>
 		</>
 	);
 };

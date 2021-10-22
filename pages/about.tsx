@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { fadeInUp } from '../animations/fadeInUp';
 import { getStagger } from '../animations/stagger';
 import type { NextPage } from 'next';
+import MainContent from '../components/MainContent';
 
 import Image from 'next/image';
 import PicOfMe from '../public/ZacEckertSquare.jpeg';
@@ -17,13 +18,7 @@ const About: NextPage = () => {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 
-			<div
-			// sx={{
-			// 	display: 'grid',
-			// 	gridTemplateColumns: '1fr 1fr',
-			// 	height: '100%',
-			// }}
-			>
+			<MainContent>
 				<motion.div
 					className='leftContent'
 					variants={getStagger(0.6)}
@@ -89,7 +84,7 @@ const About: NextPage = () => {
 						/>
 					</div>
 				</motion.div>
-			</div>
+			</MainContent>
 		</>
 	);
 };

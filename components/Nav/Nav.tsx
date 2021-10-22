@@ -1,16 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import useDarkMode from '../../hooks/useDarkMode';
-
 import NavLink from './NavLink';
+import MobileNav from './MobileNav';
 import { useRouter } from 'next/router';
 
 // icons
 import {
-	FaHome,
-	FaUserAlt,
-	FaStar,
-	FaPhoneAlt,
-	FaLaptopCode,
 	FaLinkedin,
 	FaEnvelope,
 	FaGithub,
@@ -19,38 +14,36 @@ import {
 } from 'react-icons/fa';
 
 const pages = [
-	{ text: 'Home', to: '/', icon: FaHome },
-	{ text: 'About', to: '/about', icon: FaUserAlt },
-	{ text: 'Skills', to: '/skills', icon: FaStar },
-	{ text: 'Projects', to: '/projects', icon: FaLaptopCode },
-	{ text: 'Contact', to: '/contact', icon: FaPhoneAlt },
+	{ text: 'Home', to: '/' },
+	{ text: 'About', to: '/about' },
+	{ text: 'Skills', to: '/skills' },
+	{ text: 'Projects', to: '/projects' },
+	{ text: 'Contact', to: '/contact' },
 ];
 
 const Nav = () => {
-	const [darkTheme, setDarkTheme] = useDarkMode();
-
-	const handleMode = () => setDarkTheme(!darkTheme);
-
 	const router = useRouter();
-
 	const currentPage = pages.map((page) => page.to).indexOf(router.asPath);
 
 	return (
 		<>
 			<div
 				id='navBar'
-				className='flex flex-col h-16 items-end px-3 justify-center sm:bg-header sm:flex-row sm:items-center'
+				className='flex h-16 px-3 justify-center bg-header flex-row items-center'
 			>
-				<h4 className='flex-initial text-center text-white text-xl font-semibold hidden md:flex'>
-					Zac Eckert
+				<div className='flex sm:hidden h-full w-1/4 flex-col items-end'>
+					<MobileNav pages={pages} />
+				</div>
+				<h4 className='w-1/12 min-w-max flex-initial text-center text-white text-xl font-semibold flex'>
+					ZE
 				</h4>
-				<div className='hidden flex-row place-content-evenly text-white w-1/2 sm:flex'>
+				<div className='hidden sm:flex flex-row place-content-evenly text-white w-1/2 '>
 					{pages.map((page) => (
 						<NavLink key={page.to} to={page.to} text={page.text} />
 					))}
 				</div>
 				<ThemeIcon />
-				<div className='hidden sm:flex flex-row  items-center justify-end gap-3 ml-auto dark:text-white sm:text-white'>
+				<div className='flex flex-row  items-center justify-end gap-3 ml-auto text-white'>
 					<a
 						href='mailto:zaceckert74@gmail.com'
 						target='_blank'
@@ -78,7 +71,6 @@ const Nav = () => {
 					</a>
 				</div>
 			</div>
-			<BottomNav />
 		</>
 	);
 };
@@ -87,7 +79,7 @@ const ThemeIcon = () => {
 	const [darkTheme, setDarkTheme] = useDarkMode();
 	const handleMode = () => setDarkTheme(!darkTheme);
 	return (
-		<span onClick={handleMode} className='sm:flex-auto'>
+		<span onClick={handleMode} className='m-auto'>
 			{darkTheme ? (
 				<FaSun
 					size='24'
@@ -96,31 +88,10 @@ const ThemeIcon = () => {
 			) : (
 				<FaMoon
 					size='24'
-					className=' text-gray-800 sm:text-yellow-400 mx-auto top-navigation-icon'
+					className='text-yellow-400 mx-auto top-navigation-icon'
 				/>
 			)}
 		</span>
-	);
-};
-
-// Hidden on 640px +
-const BottomNav = () => {
-	return (
-		<div
-			id='bottomNav'
-			className='flex flex-row w-full h-16 items-center  fixed bottom-0 bg-header sm:hidden'
-		>
-			<div className='flex w-full flex-row place-content-evenly text-white'>
-				{pages.map((page) => (
-					<NavLink
-						key={page.to}
-						to={page.to}
-						text={page.text}
-						Icon={page.icon}
-					/>
-				))}
-			</div>
-		</div>
 	);
 };
 
