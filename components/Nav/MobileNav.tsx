@@ -54,13 +54,13 @@ const MobileNav = ({ pages }: PageProps) => {
 		>
 			<motion.div
 				exit={fullScreen.closed}
-				className='absolute top-0 left-0 bottom-0 w-screen bg-accent opacity-80'
+				className='top-0 left-0 bottom-0 w-screen bg-accent opacity-90 z-50 fixed'
 				variants={fullScreen}
 			>
 				<MenuToggle toggle={toggle} />
 				<motion.ul
 					variants={variants}
-					className='h-full flex flex-col w-1/2 m-auto justify-center gap-16'
+					className='h-full flex flex-col w-1/2 m-auto justify-center gap-16 text-5xl text-white'
 				>
 					{pages.map((page: { to: string; text: string }) => (
 						<MobileNavLink

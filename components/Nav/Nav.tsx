@@ -29,7 +29,7 @@ const Nav = () => {
 		<>
 			<div
 				id='navBar'
-				className='flex h-16 px-3 justify-center bg-header flex-row items-center'
+				className='flex h-16 px-3 justify-center bg-header flex-row items-center fixed w-full z-50'
 			>
 				<div className='flex sm:hidden h-full w-1/4 flex-col items-end'>
 					<MobileNav pages={pages} />
