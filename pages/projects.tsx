@@ -18,17 +18,13 @@ const Projects: NextPage = () => {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 
-			<MainContent>
+			<MainContent pageTitle='Projects'>
 				<motion.div
 					className='leftContent'
 					variants={getStagger(0.6)}
 					style={{ alignSelf: '' }}
 				>
 					<div>
-						<motion.div variants={fadeInUp} style={{ alignSelf: 'center' }}>
-							<h1>Projects</h1>
-						</motion.div>
-
 						<motion.p variants={fadeInUp}>
 							My list of projects is still growing and expect to see more here
 							in the future! The project I am most proud of, I will showcase

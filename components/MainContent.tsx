@@ -6,7 +6,7 @@ import { fadeInUp } from '../animations/fadeInUp';
 interface MainContentProps {
 	children: JSX.Element | JSX.Element[];
 	customClasses?: string;
-	pageTitle: string;
+	pageTitle?: string;
 }
 
 const MainContent = ({
@@ -24,9 +24,7 @@ const MainContent = ({
 			animate='animate'
 			transition={!isNotMobile ? { delay: 0.7, duration: 0.2 } : {}}
 			exit={{ opacity: 0 }}
-			className={
-				'p-4 mt-16 ' + (customClasses !== undefined ? customClasses : '')
-			}
+			className={'mt-16 ' + (customClasses !== undefined ? customClasses : '')}
 		>
 			<motion.div style={{ alignSelf: 'center' }}>
 				<h1 className='text-5xl mb-4'>{pageTitle}</h1>

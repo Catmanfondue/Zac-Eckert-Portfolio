@@ -39,7 +39,7 @@ const About: NextPage = () => {
 					</motion.div>
 					<motion.div
 						className='leftContent md:w-1/2 flex gap-2 flex-col md:text-xl'
-						variants={getStagger(0.4)}
+						variants={getStagger(0.6)}
 					>
 						<h3 className='text-xl underline lg:text-3xl'>Tech background</h3>
 						<motion.p variants={fadeInUp} className='lg:p-6'>

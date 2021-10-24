@@ -7,8 +7,8 @@ import MainContent from '../components/MainContent';
 
 const Contact: NextPage = () => {
 	return (
-		<MainContent>
-			<span>Contact</span>
+		<MainContent pageTitle='Contact'>
+			<div></div>
 		</MainContent>
 	);
 };
