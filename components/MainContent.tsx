@@ -1,22 +1,23 @@
 import { motion } from 'framer-motion';
 import React from 'react';
-import { useMediaQuery } from 'react-responsive';
 import { fadeInUp } from '../animations/fadeInUp';
+import useWindowDimensions from '../hooks/useWindowDimensions';
 
 interface MainContentProps {
 	children: JSX.Element | JSX.Element[];
-	customClasses?: string;
+	mainClasses?: string;
 	pageTitle?: string;
+	pageTitleClasses?: string;
 }
 
 const MainContent = ({
 	children,
-	customClasses,
+	mainClasses,
 	pageTitle,
+	pageTitleClasses,
 }: MainContentProps) => {
-	const isNotMobile = useMediaQuery({
-		query: '(min-width: 640px)',
-	});
+	const { width, height } = useWindowDimensions();
+	const isNotMobile = width >= 640;
 
 	return (
 		<motion.main
@@ -24,10 +25,10 @@ const MainContent = ({
 			animate='animate'
 			transition={!isNotMobile ? { delay: 0.7, duration: 0.2 } : {}}
 			exit={{ opacity: 0 }}
-			className={'mt-16 ' + (customClasses !== undefined ? customClasses : '')}
+			className={'mt-16 ' + (mainClasses !== undefined ? mainClasses : '')}
 		>
 			<motion.div style={{ alignSelf: 'center' }}>
-				<h1 className='text-5xl mb-4'>{pageTitle}</h1>
+				<h1 className={'text-5xl mb-4 ' + pageTitleClasses}>{pageTitle}</h1>
 			</motion.div>
 			{children}
 		</motion.main>

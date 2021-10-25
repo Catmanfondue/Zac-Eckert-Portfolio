@@ -6,9 +6,30 @@ import { getStagger } from '../animations/stagger';
 import type { NextPage } from 'next';
 import MainContent from '../components/MainContent';
 import Marquee from '../components/Skills/Marquee';
+import SkillGrid from '../components/Skills/SkillGrid';
+import useWindowDimensions from '../hooks/useWindowDimensions';
+import YearsOfExperienceCounter from '../components/Skills/YearsOfExperienceCounter';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import FrontEndTab from '../components/Skills/FrontEndTab';
+import BackEndTab from '../components/Skills/BackEndTab';
+
+const techSkills = [
+	'CSS',
+	'HTML',
+	'JavaScript',
+	'Typescript',
+	'React',
+	'Nextjs',
+	'Node',
+	'MongoDB',
+	'SQL',
+];
 
 const Skills: NextPage = () => {
 	const [playScroll, setPlayScroll] = useState(true);
+	const { width, height } = useWindowDimensions();
+	const isNotMobile = width >= 640;
+
 	return (
 		<>
 			<Head>
@@ -17,47 +38,42 @@ const Skills: NextPage = () => {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 
-			<MainContent pageTitle='Skills'>
-				<motion.div
-					className='leftContent'
-					variants={getStagger(0.6)}
-					style={{ alignSelf: '' }}
-				>
-					<motion.p variants={fadeInUp}>
-						Although I have a degree in software development, most of the tech I
-						have learned I have learned on the job or on my own.
-					</motion.p>
-
-					<motion.p variants={fadeInUp}>
-						Learning new tech is my favorite part of being a Front End Engineer.
-						Web browsers, like Google Chrome, keep pushing the bar higher for{' '}
-						<a href='https://web.dev/learn-web-vitals/'>web standards</a> and I
-						feel a sense of accomplishment went creating websites that meet
-						those standards. As web standards change, technology adapts, and it
-						is my job to adapt just as the technology does.
-					</motion.p>
-
-					<motion.p variants={fadeInUp}>
-						This website for example uses{' '}
-						<a href='https://nextjs.org/'>Next.js</a>,{' '}
-						<a href='https://www.typescriptlang.org/'>Typescript</a>,{' '}
-						<a href='https://mui.com/'>MUI (Material UI 5)</a>, and some{' '}
-						<a href='https://www.framer.com/motion/'>Framer Motion.</a>
-					</motion.p>
-				</motion.div>
-				<motion.div
-					className='rightContent'
-					style={{
-						display: 'flex',
-						flexDirection: 'column',
-						alignItems: 'center',
-					}}
-				>
-					<button onClick={() => setPlayScroll(!playScroll)}>
-						{playScroll ? 'Pause' : 'Play'}
-					</button>
-					<Marquee playScroll={playScroll} />
-				</motion.div>
+			<MainContent pageTitle='Skills' pageTitleClasses='px-8'>
+				<div className='sm:flex'>
+					<motion.div className='flex gap-2 flex-col sm:w-1/2'>
+						<YearsOfExperienceCounter />
+						{!isNotMobile && (
+							<>
+								<button
+									onClick={() => setPlayScroll(!playScroll)}
+									className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-auto block'
+								>
+									{playScroll ? 'Stop' : 'Play'}
+								</button>
+								<Marquee techSkills={techSkills} playScroll={playScroll} />
+							</>
+						)}
+						<Tabs>
+							<TabList>
+								<Tab>Front End</Tab>
+								<Tab>Back End</Tab>
+							</TabList>
+							<TabPanel>
+								<FrontEndTab />
+							</TabPanel>
+							<TabPanel>
+								<BackEndTab />
+							</TabPanel>
+						</Tabs>
+					</motion.div>
+					<motion.div className='hidden sm:w-1/2 sm:block'>
+						{isNotMobile && (
+							<>
+								<SkillGrid techSkills={techSkills} />
+							</>
+						)}
+					</motion.div>
+				</div>
 			</MainContent>
 		</>
 	);
