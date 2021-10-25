@@ -10,7 +10,7 @@ interface MarqueeProps {
 
 const Marquee = ({ techSkills, playScroll }: MarqueeProps) => {
 	const { width, height } = useWindowDimensions();
-	const isNotMobile = width >= 640;
+	const isMobile = width < 640;
 	const controls = useAnimation();
 
 	useEffect(() => {
@@ -21,7 +21,7 @@ const Marquee = ({ techSkills, playScroll }: MarqueeProps) => {
 		}
 	}, [playScroll, controls]);
 
-	const translateSpeed = (75 + (!isNotMobile ? 16 : 64)) * -1;
+	const translateSpeed = (75 + (isMobile ? 16 : 64)) * -1;
 
 	const marquee = {
 		initial: {

@@ -28,7 +28,7 @@ const techSkills = [
 const Skills: NextPage = () => {
 	const [playScroll, setPlayScroll] = useState(true);
 	const { width, height } = useWindowDimensions();
-	const isNotMobile = width >= 640;
+	const isMobile = width < 640;
 
 	return (
 		<>
@@ -42,7 +42,7 @@ const Skills: NextPage = () => {
 				<div className='sm:flex'>
 					<motion.div className='flex gap-2 flex-col sm:w-1/2'>
 						<YearsOfExperienceCounter />
-						{!isNotMobile && (
+						{isMobile && (
 							<>
 								<button
 									onClick={() => setPlayScroll(!playScroll)}
@@ -67,7 +67,7 @@ const Skills: NextPage = () => {
 						</Tabs>
 					</motion.div>
 					<motion.div className='hidden sm:w-1/2 sm:block'>
-						{isNotMobile && (
+						{!isMobile && (
 							<>
 								<SkillGrid techSkills={techSkills} />
 							</>

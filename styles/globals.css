@@ -13,7 +13,7 @@
 	--darkPrimary: #367ee9;
 	--darkSecondary: #a0aec0;
 	--darkAccent: #718096;
-	--darkBg: #1f2937;
+	--darkBg: #18181a;
 	--darkMain: #0d0106;
 	--darkHeader: #3730a3;
 }
@@ -23,6 +23,10 @@
 		@apply transition duration-300 ease-in-out 
     hover:text-pink-400 
     cursor-pointer;
+	}
+
+	.contentContainer {
+		height: calc(100vh - 64px);
 	}
 }
 
@@ -105,4 +109,8 @@ body::-webkit-scrollbar-thumb {
 /* set button(top and bottom of the scrollbar) */
 body::-webkit-scrollbar-button {
 	display: none;
+}
+
+#myName path:nth-child(1) {
+	stroke-dasharray: 10px;
 }

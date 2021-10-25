@@ -17,19 +17,22 @@ const MainContent = ({
 	pageTitleClasses,
 }: MainContentProps) => {
 	const { width, height } = useWindowDimensions();
-	const isNotMobile = width >= 640;
+	const isMobile = width < 640;
 
 	return (
 		<motion.main
 			initial='initial'
 			animate='animate'
-			transition={!isNotMobile ? { delay: 0.7, duration: 0.2 } : {}}
+			transition={isMobile ? { delay: 0.7, duration: 0.2 } : {}}
 			exit={{ opacity: 0 }}
 			className={'mt-16 ' + (mainClasses !== undefined ? mainClasses : '')}
 		>
-			<motion.div style={{ alignSelf: 'center' }}>
-				<h1 className={'text-5xl mb-4 ' + pageTitleClasses}>{pageTitle}</h1>
-			</motion.div>
+			{pageTitle !== undefined && (
+				<motion.div style={{ alignSelf: 'center' }}>
+					<h1 className={'text-5xl mb-4 ' + pageTitleClasses}>{pageTitle}</h1>
+				</motion.div>
+			)}
+
 			{children}
 		</motion.main>
 	);
