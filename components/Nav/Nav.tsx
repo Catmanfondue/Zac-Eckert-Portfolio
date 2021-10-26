@@ -1,5 +1,4 @@
-import React from 'react';
-import useDarkMode from '../../hooks/useDarkMode';
+import React, { useContext, useEffect, useState } from 'react';
 import NavLink from './NavLink';
 import MobileNav from './MobileNav';
 import { useRouter } from 'next/router';
@@ -12,6 +11,7 @@ import {
 	FaMoon,
 	FaSun,
 } from 'react-icons/fa';
+import { DarkModeContext } from '../../util/Contexts/DarkModeContext';
 
 const pages = [
 	{ text: 'Home', to: '/' },
@@ -76,11 +76,23 @@ const Nav = () => {
 };
 
 const ThemeIcon = () => {
-	const [darkTheme, setDarkTheme] = useDarkMode();
-	const handleMode = () => setDarkTheme(!darkTheme);
+	const { darkMode, toggleDarkMode } = useContext(DarkModeContext);
+	const [mounted, setMounted] = useState(false);
+
+	useEffect(() => {
+		setMounted(true);
+	}, []);
+
+	if (!mounted) return null;
+
 	return (
-		<span onClick={handleMode} className='m-auto'>
-			{darkTheme ? (
+		<span
+			onClick={() => {
+				toggleDarkMode(!darkMode);
+			}}
+			className='m-auto'
+		>
+			{darkMode ? (
 				<FaSun
 					size='24'
 					className=' text-yellow-400 mx-auto	top-navigation-icon'

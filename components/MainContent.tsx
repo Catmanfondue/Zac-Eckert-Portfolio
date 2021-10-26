@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import React from 'react';
-import { fadeInUp } from '../animations/fadeInUp';
+import { fadeInUp } from '../util/animations/fadeInUp';
 import useWindowDimensions from '../hooks/useWindowDimensions';
 
 interface MainContentProps {

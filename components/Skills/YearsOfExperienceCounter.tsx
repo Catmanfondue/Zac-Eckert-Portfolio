@@ -28,7 +28,7 @@ const Counter = ({ from, to, repeat = 0, duration }: CounterProps) => {
 		const node = nodeRef.current;
 
 		const controls = animate(from, to, {
-			delay: 1,
+			delay: 0.8,
 			duration: duration,
 
 			repeat: repeat,

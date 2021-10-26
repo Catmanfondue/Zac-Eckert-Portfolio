@@ -1,8 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
 import { motion } from 'framer-motion';
-import { fadeInUp } from '../animations/fadeInUp';
-import { getStagger } from '../animations/stagger';
+import { fadeInUp } from '../util/animations/fadeInUp';
+import { getStagger } from '../util/animations/stagger';
 import type { NextPage } from 'next';
 import MainContent from '../components/MainContent';
 
