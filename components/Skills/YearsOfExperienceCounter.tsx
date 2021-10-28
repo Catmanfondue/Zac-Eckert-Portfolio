@@ -6,7 +6,7 @@ const YearsOfExperienceCounter = () => {
 
 	// there is an easing going on that I havent been able to sync up. but this was as close as I could get!
 	return (
-		<div className='px-4 text-center font-bold'>
+		<div className='px-4 text-center font-bold text-2xl'>
 			I have been a full time developer for: <br />
 			<Counter from={0} to={years} duration={1.5} /> years and{' '}
 			<Counter from={0} to={remainingMonths} duration={2} /> months.

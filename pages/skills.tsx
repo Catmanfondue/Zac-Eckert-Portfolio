@@ -12,6 +12,7 @@ import YearsOfExperienceCounter from '../components/Skills/YearsOfExperienceCoun
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import FrontEndTab from '../components/Skills/FrontEndTab';
 import BackEndTab from '../components/Skills/BackEndTab';
+import Button from '../components/Common/Button';
 
 const techSkills = [
 	'CSS',
@@ -44,12 +45,10 @@ const Skills: NextPage = () => {
 						<YearsOfExperienceCounter />
 						{isMobile && (
 							<>
-								<button
+								<Button
+									text={playScroll ? 'Stop' : 'Play'}
 									onClick={() => setPlayScroll(!playScroll)}
-									className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-auto block'
-								>
-									{playScroll ? 'Stop' : 'Play'}
-								</button>
+								/>
 								<Marquee techSkills={techSkills} playScroll={playScroll} />
 							</>
 						)}

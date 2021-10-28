@@ -38,36 +38,40 @@ const About: NextPage = () => {
 						</div>
 					</motion.div>
 					<motion.div
-						className='leftContent md:w-1/2 flex gap-2 flex-col md:text-xl'
+						className='leftContent md:w-1/2 flex gap-2 flex-col mt-12'
 						variants={getStagger(0.6)}
 					>
-						<h2 className='text-xl underline lg:text-3xl'>Tech background</h2>
-						<motion.p variants={fadeInUp} className='lg:p-6'>
-							Hello! My name is Zac and I am a Front End Engineer who currently
-							works out of Salt Lake City. I love learning the latest tech and
-							growing along side the ever-evolving tech industry.
-						</motion.p>
+						<motion.div variants={fadeInUp}>
+							<h2 className='text-xl underline lg:text-3xl'>Tech background</h2>
+							<p className=''>
+								Hello! My name is Zac and I am a Front End Engineer who
+								currently works out of Salt Lake City. I love learning the
+								latest tech and growing along side the ever-evolving tech
+								industry.
+							</p>
 
-						<motion.p variants={fadeInUp} className='lg:p-6'>
-							I am originally from Green Bay, Wisconsin and have been
-							programming since highschool. I graduated college with a degree in
-							software development. Following graduation, I worked for 3 years
-							at a company in Green Bay. Later I moved to a Salt Lake City to
-							join a more competitive and advanced tech culture.
-						</motion.p>
+							<p className='mt-4 '>
+								I am originally from Green Bay, Wisconsin and have been
+								programming since highschool. I graduated college with a degree
+								in software development. Following graduation, I worked for 3
+								years at a company in Green Bay. Later I moved to a Salt Lake
+								City to join a more competitive and advanced tech culture.
+							</p>
+						</motion.div>
+						<motion.div variants={fadeInUp} className='mt-12'>
+							<h2 className='text-xl underline lg:text-3xl'>Outside of Tech</h2>
 
-						<h2 className='text-xl underline lg:text-3xl'>Outside of Tech</h2>
+							<p className=''>
+								My hobbies include hiking, playing basketball, and recently, I
+								began bouldering at a nearby rock climbing gym.
+							</p>
 
-						<motion.p variants={fadeInUp} className='lg:p-6'>
-							My hobbies include hiking, playing basketball, and recently, I
-							began bouldering at a nearby rock climbing gym.
-						</motion.p>
-
-						<motion.p variants={fadeInUp} className='lg:p-6'>
-							Additionally, you can also find me spending time with my
-							significant other, my dog (Roxy), or grabbing a beer at a local
-							brewery with friends.
-						</motion.p>
+							<p className='mt-4 '>
+								Additionally, you can also find me spending time with my
+								significant other, my dog (Roxy), or grabbing a beer at a local
+								brewery with friends.
+							</p>
+						</motion.div>
 					</motion.div>
 				</motion.div>
 			</MainContent>

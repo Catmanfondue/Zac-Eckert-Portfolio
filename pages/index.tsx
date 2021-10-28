@@ -9,6 +9,7 @@ import MyName from '../components/MyName';
 import { DarkModeContext } from '../util/Contexts/DarkModeContext';
 import React, { useContext, useEffect, useState } from 'react';
 import Link from 'next/link';
+import Button from '../components/Common/Button';
 
 const Home: NextPage = () => {
 	const { width, height } = useWindowDimensions();
@@ -39,16 +40,14 @@ const Home: NextPage = () => {
 						<MyName width={'100%'} strokeColor={darkMode ? 'white' : 'black'} />
 					</motion.div>
 
-					<motion.div variants={fadeInUp}>
-						<h2 className='text-white text-5xl'>Front End Engineer</h2>
+					<motion.div className='w-4/5' variants={fadeInUp}>
+						<h2 className=' text-5xl'>Front End Engineer</h2>
 					</motion.div>
 				</motion.div>
 				<motion.div className='rightContent sm:w-1/2'>
 					<motion.div variants={fadeInUp}>
 						<Link href={'/about'} passHref>
-							<button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-auto block'>
-								Learn more about me
-							</button>
+							<Button text='Learn more about me' />
 						</Link>
 					</motion.div>
 				</motion.div>

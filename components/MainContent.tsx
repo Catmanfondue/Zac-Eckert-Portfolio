@@ -28,7 +28,7 @@ const MainContent = ({
 			className={'mt-16 ' + (mainClasses !== undefined ? mainClasses : '')}
 		>
 			{pageTitle !== undefined && (
-				<motion.div style={{ alignSelf: 'center' }}>
+				<motion.div>
 					<h1 className={'text-5xl mb-4 ' + pageTitleClasses}>{pageTitle}</h1>
 				</motion.div>
 			)}

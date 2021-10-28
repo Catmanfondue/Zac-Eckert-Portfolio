@@ -1,99 +1,59 @@
-import React, { FormEventHandler, useState } from 'react';
-import axios from 'axios';
+// Make sure to run npm install @formspree/react
+// For more help visit https://formspr.ee/react-help
 
-const ContactForm = () => {
-	const [status, setStatus] = useState({
-		submitted: false,
-		submitting: false,
-		info: { error: false, msg: null },
-	});
-	const [inputs, setInputs] = useState({
-		email: '',
-		message: '',
-	});
-	const handleServerResponse = (ok, msg) => {
-		if (ok) {
-			setStatus({
-				submitted: true,
-				submitting: false,
-				info: { error: false, msg: msg },
-			});
-			setInputs({
-				email: '',
-				message: '',
-			});
-		} else {
-			setStatus({
-				info: { error: true, msg: msg },
-			});
-		}
-	};
-	const handleOnChange = (e: any) => {
-		e.persist();
-		setInputs((prev) => ({
-			...prev,
-			[e.target.id]: e.target.value,
-		}));
-		setStatus({
-			submitted: false,
-			submitting: false,
-			info: { error: false, msg: null },
-		});
-	};
-	const handleOnSubmit = (e: FormEventHandler) => {
-		e.preventDefault();
-		setStatus((prevStatus) => ({ ...prevStatus, submitting: true }));
-		axios({
-			method: 'POST',
-			url: 'https://formspree.io/[your-formspree-endpoint]',
-			data: inputs,
-		})
-			.then((response) => {
-				handleServerResponse(
-					true,
-					'Thank you, your message has been submitted.'
-				);
-			})
-			.catch((error) => {
-				handleServerResponse(false, error.response.data.error);
-			});
-	};
+import React from 'react';
+import { useForm, ValidationError } from '@formspree/react';
+import Button from '../Common/Button';
+function ContactForm() {
+	const [state, handleSubmit] = useForm('xayazgqn');
+	if (state.succeeded) {
+		return <p>Thanks for reaching out &#128516;</p>;
+	}
 	return (
-		<main>
-			<h1>React and Formspree</h1>
-			<hr />
-			<form onSubmit={handleOnSubmit}>
-				<label htmlFor='email'>Email</label>
+		<form
+			onSubmit={handleSubmit}
+			className='w-full mb-4 p-4 bg-green-700 rounded-lg md:w-3/4 md:flex md:flex-wrap md:justify-between md:flex-col md:items-center xl:w-1/2'
+		>
+			<div className='flex flex-col mb-4 md:w-1/2'>
+				<label className='mb-2 tracking-wide font-bold text-lg' htmlFor='email'>
+					Your Email Address
+				</label>
+				<div className='text-red-500'>
+					<ValidationError prefix='Email' field='email' errors={state.errors} />
+				</div>
 				<input
+					className='border py-2 px-3 md:mr-2 rounded-lg'
 					id='email'
 					type='email'
-					name='_replyto'
-					onChange={handleOnChange}
-					required
-					value={inputs.email}
+					name='email'
 				/>
-				<label htmlFor='message'>Message</label>
+			</div>
+
+			<div className='flex flex-col mb-4 md:w-1/2'>
+				<label
+					className='mb-2 tracking-wide font-bold text-lg'
+					htmlFor='message'
+				>
+					Your Message:
+				</label>
+				<div className='text-red-500'>
+					<ValidationError
+						prefix='Message'
+						field='message'
+						errors={state.errors}
+					/>
+				</div>
 				<textarea
 					id='message'
 					name='message'
-					onChange={handleOnChange}
-					required
-					value={inputs.message}
+					className='border py-2 px-3 h-[200px] md:mr-2 rounded-lg text-black'
 				/>
-				<button type='submit' disabled={status.submitting}>
-					{!status.submitting
-						? !status.submitted
-							? 'Submit'
-							: 'Submitted'
-						: 'Submitting...'}
-				</button>
-			</form>
-			{status.info.error && (
-				<div className='error'>Error: {status.info.msg}</div>
-			)}
-			{!status.info.error && status.info.msg && <p>{status.info.msg}</p>}
-		</main>
+			</div>
+			<Button type='submit' disabled={state.submitting} text='Submit' />
+		</form>
 	);
-};
-
-export default ContactForm;
+}
+function App() {
+	return <ContactForm />;
+}
+export default App;
