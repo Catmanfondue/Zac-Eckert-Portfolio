@@ -5,9 +5,7 @@ import { fadeInUp } from '../util/animations/fadeInUp';
 import { getStagger } from '../util/animations/stagger';
 import type { NextPage } from 'next';
 import MainContent from '../components/MainContent';
-
-import Image from 'next/image';
-import PicOfMe from '../public/ZacEckertSquare.jpeg';
+import Carasoul from '../components/Projects/tuneroomz/Carasoul';
 
 const Projects: NextPage = () => {
 	return (
@@ -18,50 +16,74 @@ const Projects: NextPage = () => {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 
-			<MainContent pageTitle='Projects'>
-				<motion.div
-					className='leftContent'
-					variants={getStagger(0.6)}
-					style={{ alignSelf: '' }}
-				>
-					<div>
+			<MainContent pageTitle='Projects' mainClasses='p-4'>
+				<motion.div className='flex flex-col sm:flex-row gap-4'>
+					<motion.div
+						className='leftContent sm:w-1/2'
+						variants={getStagger(0.6)}
+					>
 						<motion.p variants={fadeInUp}>
 							My list of projects is still growing and expect to see more here
 							in the future! The project I am most proud of, I will showcase
 							here.
 						</motion.p>
+						<motion.div className='mt-12'>
+							<motion.h2 className='text-xl underline'>TuneRoomz</motion.h2>
 
-						<motion.h2>TuneRoomz</motion.h2>
+							<motion.p variants={fadeInUp}>
+								I was once at a party, where the host was connected to the
+								speakers playing the music. Several people were pestering the
+								host to have them play their song and skip someone else&apos;s
+								request cause they didn&apos;t like that song. The host said to
+								me after:{' '}
+							</motion.p>
 
-						<motion.p variants={fadeInUp}>
-							I was once at a party where one person was connected to the
-							speakers that was playing the music. Several people were pestering
-							the person in control of the music to have them play to their song
-							right at that moment. They said to me after: <br />{' '}
-							<span style={{}}>
-								&quot;I wish there was a way they could just vote on what song
-								to play and not have to bother me.&quot;
-							</span>
-						</motion.p>
+							<div className='my-4'>
+								<motion.span className='italic '>
+									&quot;I wish there was a way they could just vote on what song
+									to play and I could just enjoy the party.&quot;
+								</motion.span>
+							</div>
 
-						<motion.p variants={fadeInUp}>
-							Even though there was probably already an existing app to do this,
-							I wanted to prove to myself that I could do it. Hence,
-							TuneRoomz.com was born. I created a full stack, real time, web
-							application that works with your spotify.
-						</motion.p>
-
-						<motion.p variants={fadeInUp}></motion.p>
-					</div>
+							<motion.p variants={fadeInUp}>
+								Even though there was probably already an existing app to do
+								this, I wanted to prove to myself that I could do it. After a
+								lot of work and learning, TuneRoomz.com was born. I created a
+								full stack, real time, web application that works with your
+								spotify.
+							</motion.p>
+						</motion.div>
+					</motion.div>
+					<motion.div
+						className='rightContent sm:w-1/2'
+						style={{
+							display: 'grid',
+							alignItems: 'center',
+							justifyItems: 'center',
+						}}
+					>
+						<Carasoul />
+						<div className='mt-4'>
+							<motion.h2 className='text-xl underline'>Tech Stack</motion.h2>
+							<span>I was able to create this with (MERN Stack):</span>
+							<ul className='list-disc ml-12'>
+								<li>MongoDB</li>
+								<li>Express JS</li>
+								<li>React JS</li>
+								<li>Node JS</li>
+							</ul>
+							<p>
+								It also uses Spotify&apos;s APIs for searching, queueing,
+								playing, and skipping songs.
+							</p>
+							<p>
+								Lastly it uses websockets to make sure all of the song requests,
+								votes, and anything else is expereinced by everyone in the room
+								at the same time.
+							</p>
+						</div>
+					</motion.div>
 				</motion.div>
-				<motion.div
-					className='rightContent'
-					style={{
-						display: 'grid',
-						alignItems: 'center',
-						justifyItems: 'center',
-					}}
-				></motion.div>
 			</MainContent>
 		</>
 	);

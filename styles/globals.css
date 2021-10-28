@@ -29,7 +29,27 @@
 		height: calc(100vh - 64px);
 	}
 }
+/* Carasoul Styles */
+.carousel-root {
+	width: 100% !important;
+	height: 100% !important;
+	position: absolute;
+}
 
+.carousel.carousel-slider {
+	height: 100% !important;
+}
+
+.slider-wrapper.axis-horizontal {
+	width: 100% !important;
+	height: 100% !important;
+}
+
+.slider.animated {
+	height: 100% !important;
+}
+
+/* Tabs Styles */
 .react-tabs {
 	-webkit-tap-highlight-color: transparent;
 	margin-left: 1rem;

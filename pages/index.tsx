@@ -40,7 +40,7 @@ const Home: NextPage = () => {
 					</motion.div>
 
 					<motion.div variants={fadeInUp}>
-						<h2 className='text-white text-4xl'>Front End Engineer</h2>
+						<h2 className='text-white text-5xl'>Front End Engineer</h2>
 					</motion.div>
 				</motion.div>
 				<motion.div className='rightContent sm:w-1/2'>

@@ -18,7 +18,7 @@ const About: NextPage = () => {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 
-			<MainContent pageTitle='About' mainClasses='px-4'>
+			<MainContent pageTitle='About' mainClasses='p-4'>
 				<motion.div
 					className='md:flex flex-row-reverse'
 					initial={{ opacity: 0 }}
