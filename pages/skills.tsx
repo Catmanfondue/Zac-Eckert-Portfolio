@@ -39,7 +39,7 @@ const Skills: NextPage = () => {
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 
-			<MainContent pageTitle='Skills' pageTitleClasses='px-8'>
+			<MainContent pageTitle='Skills' pageTitleClasses='px-4 mt-4'>
 				<div className='sm:flex'>
 					<motion.div className='flex gap-2 flex-col sm:w-1/2'>
 						<YearsOfExperienceCounter />
