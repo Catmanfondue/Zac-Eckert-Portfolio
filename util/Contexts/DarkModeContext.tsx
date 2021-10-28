@@ -13,7 +13,13 @@ export const DarkModeContext = React.createContext<darkModeProps>({
 	darkMode: false,
 });
 
-export const DarkModeContextProvider = ({ children }: any) => {
+interface DarkModeContextProviderProps {
+	children: JSX.Element | JSX.Element[];
+}
+
+export const DarkModeContextProvider = ({
+	children,
+}: DarkModeContextProviderProps) => {
 	const [enabled, setEnabled] = useLocalStorage('dark-theme');
 	const [isUsingDarkMode, setIsUsingDarkMode] = useState(enabled);
 

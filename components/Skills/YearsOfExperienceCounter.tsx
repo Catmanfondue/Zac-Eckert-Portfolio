@@ -22,7 +22,7 @@ interface CounterProps {
 }
 
 const Counter = ({ from, to, repeat = 0, duration }: CounterProps) => {
-	const nodeRef = useRef();
+	const nodeRef = useRef<HTMLSpanElement>(null);
 
 	useEffect(() => {
 		const node = nodeRef.current;
@@ -34,7 +34,7 @@ const Counter = ({ from, to, repeat = 0, duration }: CounterProps) => {
 			repeat: repeat,
 			repeatDelay: 0,
 			onUpdate(value) {
-				if (node !== undefined) node.textContent = value.toFixed(0);
+				if (node !== null) node.textContent = value.toFixed(0);
 			},
 		});
 

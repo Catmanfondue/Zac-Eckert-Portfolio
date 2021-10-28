@@ -17,7 +17,7 @@ const MainContent = ({
 	pageTitleClasses,
 }: MainContentProps) => {
 	const { width, height } = useWindowDimensions();
-	const isMobile = width < 640;
+	const isMobile = width !== undefined ? width < 640 : false;
 
 	return (
 		<motion.main

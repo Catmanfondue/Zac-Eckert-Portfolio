@@ -10,7 +10,7 @@ interface MarqueeProps {
 
 const Marquee = ({ techSkills, playScroll }: MarqueeProps) => {
 	const { width, height } = useWindowDimensions();
-	const isMobile = width < 640;
+	const isMobile = width !== undefined ? width < 640 : false;
 	const controls = useAnimation();
 
 	useEffect(() => {
