@@ -21,7 +21,7 @@ const Button = ({
 			disabled={disabled !== undefined ? disabled : false}
 			onClick={onClick === undefined ? () => {} : onClick}
 			className={
-				'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-auto block ' +
+				'bg-blue-700 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded m-auto block ' +
 				(customClasses !== undefined ? customClasses : '')
 			}
 		>
