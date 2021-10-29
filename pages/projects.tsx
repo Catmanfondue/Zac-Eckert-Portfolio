@@ -23,18 +23,18 @@ const Projects: NextPage = () => {
 						className='leftContent sm:ml-4 sm:w-1/2'
 					>
 						<motion.p variants={fadeInUp}>
-							My list of projects is still growing and expect to see more here
-							in the future! The project I am most proud of, I will showcase
-							here.
+							My other independent projects are currently in development, so
+							expect more here soon! I will showcase the project I am most proud
+							of here.
 						</motion.p>
 						<motion.div className='mt-6 sm:mt-12' variants={fadeInUp}>
 							<motion.h2 className='text-xl underline'>TuneRoomz</motion.h2>
 
 							<motion.p>
-								I was once at a party, where the host was connected to the
-								speakers playing the music. Several people were pestering the
-								host to have them play their song and skip someone else&apos;s
-								request. The host said to me after:{' '}
+								One time at a party, the host was connected to the speakers
+								playing music. Several people were pestering the host to play
+								their song and skip someone else&apos;s request. The host said
+								to me after:{' '}
 							</motion.p>
 
 							<motion.div className='my-4'>
@@ -45,11 +45,11 @@ const Projects: NextPage = () => {
 							</motion.div>
 
 							<motion.p>
-								Even though there was probably already an existing app to do
-								this, I wanted to prove to myself that I could do it. After a
-								lot of work and learning, TuneRoomz.com was born. I created a
-								full stack, real time, web application that works with your
-								spotify.
+								Even an app likely existed to solve this issue, I wanted to
+								prove to myself that I create it. After countless hours of
+								mistakes, discoveries, and successes, TuneRoomz.com was born. I
+								created a full stack, real-time, web application that works with
+								Spotify accounts.
 							</motion.p>
 						</motion.div>
 						<motion.div variants={fadeInUp} className='mt-4'>
@@ -66,9 +66,9 @@ const Projects: NextPage = () => {
 								playing, and skipping songs.
 							</p>
 							<p>
-								Lastly it uses websockets to make sure all of the song requests,
-								votes, and anything else is expereinced by everyone in the room
-								at the same time.
+								Lastly, it uses websockets to make sure all of the song
+								requests, votes, and any other user interaction is expereinced
+								by everyone in the room simultaneously.
 							</p>
 						</motion.div>
 					</motion.div>

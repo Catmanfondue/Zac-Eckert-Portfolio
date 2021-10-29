@@ -24,13 +24,11 @@ const Contact: NextPage = () => {
 					</motion.h2>
 					<motion.div variants={fadeInUp}>
 						<p className='my-4 md:w-1/2'>
-							If you are interested in working together, have any questions or
-							just want to say hello, don&apos;t hesitate feel reach out. I like
-							to stay on top of these messages and should respond in 1-2 days.
+							If you are interested in working together, have any questions, or
+							just want to say introduce yourself, please don&apos;t hesitate to
+							reach out. I like to stay current with these messages, so I will
+							respond within 1-2 days.
 						</p>
-						<span className='italic'>
-							*I currently am only interested in jobs that can be done remotely.
-						</span>
 					</motion.div>
 					<motion.div
 						variants={fadeInUp}

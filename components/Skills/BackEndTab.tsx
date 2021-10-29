@@ -7,21 +7,21 @@ const BackEndTab = () => {
 		<div className='px-8 pb-2 flex flex-col  gap-4 '>
 			<h2 className='text-xl underline lg:text-3xl'>Back End / Other</h2>
 			<motion.p variants={fadeInUp} className=''>
-				I do have a front end focus, but I am not exclusively a front end
-				engineer.
+				Much of my tech skills are highlighted through front end engineering;
+				however, my tech expertise also touches on some backend technologies.
 			</motion.p>
 
 			<motion.p variants={fadeInUp} className=''>
-				As I mentioned in my &quot;Front End&quot; section, my degree taught
-				very little for Front End tech. My courses were primarily focused on
-				Java, C#, and SQL.
+				As I mentioned in my &quot;Front End&quot; section, my degree had an
+				emphasis on backend tech. My courses were primarily focused on Java, C#,
+				and SQL.
 			</motion.p>
 
 			<motion.p variants={fadeInUp}>
-				I still interact with backend code on a weekly basis (C#), and still
-				push myself to keep learning backend / devops technologies as well.
-				GraphQL specifically is going to be something I will be learning very
-				soon instead of the REST API&apos;s that I&apos;m used to building.
+				I work with backend technologies frequently, mainly C#, and continue to
+				push myself to keep learning backend/devops technologies. Specifically,
+				GraphQL is something I am beginning to learn and am excited to impliment
+				over traditional REST APIs.
 			</motion.p>
 		</div>
 	);

@@ -54,7 +54,7 @@ const About: NextPage = () => {
 								I am originally from Green Bay, Wisconsin and have been
 								programming since highschool. I graduated college with a degree
 								in software development. Following graduation, I worked for 3
-								years at a company in Green Bay. Later I moved to a Salt Lake
+								years at a company in Green Bay. Later, I moved to a Salt Lake
 								City to join a more competitive and advanced tech culture.
 							</p>
 						</motion.div>
@@ -62,14 +62,17 @@ const About: NextPage = () => {
 							<h2 className='text-xl underline lg:text-3xl'>Outside of Tech</h2>
 
 							<p className=''>
-								My hobbies include hiking, playing basketball, and recently, I
-								began bouldering at a nearby rock climbing gym.
+								My hobbies include hiking, playing basketball, and recently,
+								bouldering! Although it is clear that I am a beginner compared
+								to other climbers, I find it satisfying to challenge myself with
+								a new activity.
 							</p>
 
 							<p className='mt-4 '>
-								Additionally, you can also find me spending time with my
-								significant other, my dog (Roxy), or grabbing a beer at a local
-								brewery with friends.
+								When I&apos;m not outdoors or doing something active, you can
+								find me spending time with my girlfriend my dog. I also enjoy
+								playing video games, going to local breweries and cheering on my
+								favorite sports teams: Green Bay Packers and Milwaukee Bucks.
 							</p>
 						</motion.div>
 					</motion.div>
