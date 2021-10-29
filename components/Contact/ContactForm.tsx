@@ -15,7 +15,10 @@ function ContactForm() {
 			className='w-full mb-4 p-4 bg-green-700 rounded-lg md:w-3/4 md:flex md:flex-wrap md:justify-between md:flex-col md:items-center xl:w-1/2'
 		>
 			<div className='flex flex-col mb-4 md:w-3/4'>
-				<label className='mb-2 tracking-wide font-bold text-lg' htmlFor='email'>
+				<label
+					className='mb-2 tracking-wide font-bold text-lg text-white'
+					htmlFor='email'
+				>
 					Your Email Address
 				</label>
 				<div className='text-red-500'>
@@ -31,7 +34,7 @@ function ContactForm() {
 
 			<div className='flex flex-col mb-4 md:w-3/4'>
 				<label
-					className='mb-2 tracking-wide font-bold text-lg'
+					className='mb-2 tracking-wide font-bold text-lg text-white'
 					htmlFor='message'
 				>
 					Your Message:
