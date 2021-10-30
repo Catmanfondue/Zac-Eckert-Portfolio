@@ -27,8 +27,8 @@ const Home: NextPage = () => {
 	return (
 		<>
 			<Head>
-				<title>Zac Eckert | Front End Engineer</title>
-				<meta name='description' content='Front End Engineer' />
+				<title>Zac Eckert | Software Engineer</title>
+				<meta name='description' content='Software Engineer' />
 				<link rel='icon' href='/favicon.ico' />
 			</Head>
 
@@ -42,7 +42,7 @@ const Home: NextPage = () => {
 					</motion.div>
 
 					<motion.div className='w-4/5' variants={fadeInUp}>
-						<h2 className=' text-5xl'>Front End Engineer</h2>
+						<h2 className=' text-5xl'>Software Engineer</h2>
 					</motion.div>
 				</motion.div>
 				<motion.div className='rightContent sm:w-1/2'>

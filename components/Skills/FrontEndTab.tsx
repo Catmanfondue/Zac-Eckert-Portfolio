@@ -12,7 +12,7 @@ const FrontEndTab = () => {
 			</motion.p>
 
 			<motion.p variants={fadeInUp} className=''>
-				Learning new tech is my favorite part of being a Front End Engineer. The
+				Learning new tech is my favorite part of being a Software Engineer. The
 				first language I learned independently was React. I watched youtube
 				tutorials, attended{' '}
 				<a
