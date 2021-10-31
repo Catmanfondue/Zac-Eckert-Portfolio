@@ -12,7 +12,7 @@ function ContactForm() {
 	return (
 		<form
 			onSubmit={handleSubmit}
-			className='w-full mb-4 p-4 bg-green-700 rounded-lg md:w-3/4 md:flex md:flex-wrap md:justify-between md:flex-col md:items-center xl:w-1/2'
+			className='w-full mb-4 p-4 bg-accent rounded-lg md:w-3/4 md:flex md:flex-wrap md:justify-between md:flex-col md:items-center xl:w-1/2'
 		>
 			<div className='flex flex-col mb-4 md:w-3/4'>
 				<label
