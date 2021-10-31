@@ -44,10 +44,9 @@ const About: NextPage = () => {
 						<motion.div variants={fadeInUp}>
 							<h2 className='text-xl underline lg:text-3xl'>Tech background</h2>
 							<p className=''>
-								Hello! My name is Zac and I am a Front End Engineer who
-								currently works out of Salt Lake City. I love learning the
-								latest tech and growing along side the ever-evolving tech
-								industry.
+								Hello! My name is Zac and I am a Software Engineer who currently
+								works out of Salt Lake City. I love learning the latest tech and
+								growing along side the ever-evolving tech industry.
 							</p>
 
 							<p className='mt-4 '>
