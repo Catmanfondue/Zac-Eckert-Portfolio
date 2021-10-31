@@ -3,25 +3,18 @@
 @tailwind utilities;
 
 #root {
-	--primary: #367ee9;
-	--secondary: #a0aec0;
+	--primary: #3730a3;
+	--secondary: #fbbf24;
 	--accent: #718096;
-	--bg: #d1d5db;
-	--main: #0d0106;
-	--header: #3730a3;
 
-	--darkPrimary: #367ee9;
-	--darkSecondary: #a0aec0;
-	--darkAccent: #718096;
+	--bg: #d1d5db;
 	--darkBg: #18181a;
-	--darkMain: #0d0106;
-	--darkHeader: #3730a3;
 }
 
 @layer components {
 	.top-navigation-icon {
 		@apply transition duration-300 ease-in-out 
-    hover:text-pink-400 
+    hover:text-secondary
     cursor-pointer;
 	}
 
@@ -45,7 +38,7 @@
 	height: 100% !important;
 }
 
-.slider.animated {
+.slider {
 	height: 100% !important;
 }
 

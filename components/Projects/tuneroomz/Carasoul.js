@@ -9,22 +9,18 @@ import Queue from '../../../public/TuneRoomz/Queue.png';
 import Help from '../../../public/TuneRoomz/Help.png';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Slide from './Slide';
-import useWindowDimensions from '../../../hooks/useWindowDimensions';
 
 const Banner = () => {
 	const customRenderItem = (item, props) => (
 		<item.type {...item.props} {...props} />
 	);
 
-	const { width, height } = useWindowDimensions();
-	const isMobile = width < 640;
-
 	return (
 		<div className='relative w-full min-h-[500px]'>
 			<Carousel
 				renderItem={customRenderItem}
 				showThumbs={false}
-				swipeable={isMobile}
+				swipeable
 				onClickItem={() => {}}
 			>
 				<Slide key='0' image={Login} title='Login Page' />

@@ -12,7 +12,6 @@ import Link from 'next/link';
 import Button from '../components/Common/Button';
 
 const Home: NextPage = () => {
-	const { width, height } = useWindowDimensions();
 	const { darkMode } = useContext(DarkModeContext);
 	const [mounted, setMounted] = useState(false);
 
@@ -21,8 +20,6 @@ const Home: NextPage = () => {
 	}, []);
 
 	if (!mounted) return null;
-
-	const isMobile = width !== undefined ? width < 640 : false;
 
 	return (
 		<>
@@ -47,7 +44,7 @@ const Home: NextPage = () => {
 				</motion.div>
 				<motion.div className='rightContent sm:w-1/2'>
 					<motion.div variants={fadeInUp}>
-						<Link href={'/about'} passHref>
+						<Link href='/about' passHref>
 							<Button text='Learn more about me' />
 						</Link>
 					</motion.div>

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import NavLink from './NavLink';
 import MobileNav from './MobileNav';
-import { useRouter } from 'next/router';
+// import { useRouter } from 'next/router';
 
 // icons
 import {
@@ -22,14 +22,14 @@ const pages = [
 ];
 
 const Nav = () => {
-	const router = useRouter();
-	const currentPage = pages.map((page) => page.to).indexOf(router.asPath);
+	// const router = useRouter();
+	// const currentPage = pages.map((page) => page.to).indexOf(router.asPath);
 
 	return (
 		<>
 			<div
 				id='navBar'
-				className='flex h-16 px-3 justify-center bg-header flex-row items-center fixed w-full z-50'
+				className='flex h-16 px-3 justify-center bg-primary flex-row items-center fixed w-full z-50'
 			>
 				<div className='flex sm:hidden h-full w-1/4 flex-col items-end'>
 					<MobileNav pages={pages} />
@@ -98,12 +98,12 @@ const ThemeIcon = () => {
 			{darkMode ? (
 				<FaSun
 					size='24'
-					className=' text-yellow-400 mx-auto	top-navigation-icon'
+					className=' text-secondary mx-auto	top-navigation-icon'
 				/>
 			) : (
 				<FaMoon
 					size='24'
-					className='text-yellow-400 mx-auto top-navigation-icon'
+					className='text-secondary mx-auto top-navigation-icon'
 				/>
 			)}
 		</span>

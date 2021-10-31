@@ -50,17 +50,20 @@ const MobileNav = ({ pages }: PageProps) => {
 			id='mobileNav'
 			initial={false}
 			animate={mobileNavOpen ? 'open' : 'closed'}
-			className='w-full h-full flex flex-col items-start justify-center'
+			className='w-full h-full flex flex-col items-start justify-center '
 		>
 			<motion.div
 				exit={fullScreen.closed}
-				className='top-0 left-0 bottom-0 w-screen bg-accent opacity-90 z-50 fixed'
+				className='top-0 left-0 bottom-0 w-screen bg-accent z-50 fixed'
 				variants={fullScreen}
 			>
 				<MenuToggle toggle={toggle} />
 				<motion.ul
 					variants={variants}
-					className='h-full flex flex-col w-1/2 m-auto justify-center gap-16 text-5xl text-white'
+					className={
+						'h-full flex flex-col w-1/2 m-auto justify-center gap-16 text-5xl text-white ' +
+						(mobileNavOpen ? 'z-50' : 'z-0')
+					}
 				>
 					{pages.map((page: { to: string; text: string }) => (
 						<MobileNavLink
