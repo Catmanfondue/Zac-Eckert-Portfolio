@@ -36,7 +36,7 @@ const MobileNav = ({ pages }: PageProps) => {
 		},
 	};
 
-	const variants = {
+	const listVariants = {
 		open: {
 			transition: { staggerChildren: 0.07, delayChildren: 0.2 },
 		},
@@ -50,7 +50,7 @@ const MobileNav = ({ pages }: PageProps) => {
 			id='mobileNav'
 			initial={false}
 			animate={mobileNavOpen ? 'open' : 'closed'}
-			className='w-full h-full flex flex-col items-start justify-center '
+			className='w-full h-full flex flex-col items-start justify-center'
 		>
 			<motion.div
 				exit={fullScreen.closed}
@@ -59,11 +59,8 @@ const MobileNav = ({ pages }: PageProps) => {
 			>
 				<MenuToggle toggle={toggle} />
 				<motion.ul
-					variants={variants}
-					className={
-						'h-full flex flex-col w-1/2 m-auto justify-center gap-16 text-5xl text-white ' +
-						(mobileNavOpen ? 'z-50' : 'z-0')
-					}
+					variants={listVariants}
+					className='h-full flex flex-col w-1/2 m-auto justify-center gap-16 text-5xl text-white'
 				>
 					{pages.map((page: { to: string; text: string }) => (
 						<MobileNavLink
@@ -71,6 +68,7 @@ const MobileNav = ({ pages }: PageProps) => {
 							to={page.to}
 							text={page.text}
 							toggle={toggle}
+							isOpen={mobileNavOpen}
 						/>
 					))}
 				</motion.ul>

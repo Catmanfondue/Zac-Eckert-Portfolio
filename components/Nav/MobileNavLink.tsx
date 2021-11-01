@@ -6,6 +6,7 @@ interface MobileNavLinkProps {
 	to: string;
 	text: string;
 	toggle: MouseEventHandler<HTMLLIElement>;
+	isOpen: boolean;
 }
 
 const variants = {
@@ -25,18 +26,17 @@ const variants = {
 	},
 };
 
-const MobileNavLink = ({ to, text, toggle }: MobileNavLinkProps) => {
+const MobileNavLink = ({ to, text, toggle, isOpen }: MobileNavLinkProps) => {
 	return (
 		<motion.li
 			variants={variants}
-			whileHover={{ scale: 1.1 }}
 			whileTap={{ scale: 0.95 }}
-			exit={variants.closed}
 			onClick={toggle}
+			className={isOpen ? 'z-50' : 'z-[-1]'}
 		>
 			<Link href={to} passHref>
 				<div className='flex flex-col items-center cursor-pointer'>
-					<span className=' underline'>{text}</span>
+					<span className='underline'>{text}</span>
 				</div>
 			</Link>
 		</motion.li>
