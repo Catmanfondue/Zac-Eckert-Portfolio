@@ -25,7 +25,7 @@ function ContactForm() {
 					<ValidationError prefix='Email' field='email' errors={state.errors} />
 				</div>
 				<input
-					className='border py-2 px-3 md:mr-2 rounded-lg'
+					className='border py-2 px-3 md:mr-2 rounded-lg text-black'
 					id='email'
 					type='email'
 					name='email'
