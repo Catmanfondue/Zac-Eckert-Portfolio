@@ -38,10 +38,10 @@ const MobileNav = ({ pages }: PageProps) => {
 
 	const listVariants = {
 		open: {
-			transition: { staggerChildren: 0.07, delayChildren: 0.2 },
+			transition: { delayChildren: 0.4 },
 		},
 		closed: {
-			transition: { staggerChildren: 0.05, staggerDirection: -1 },
+			transition: { staggerDirection: -1 },
 		},
 	};
 

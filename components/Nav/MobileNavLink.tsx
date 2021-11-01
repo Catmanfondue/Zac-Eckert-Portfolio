@@ -11,6 +11,7 @@ interface MobileNavLinkProps {
 
 const variants = {
 	open: {
+		display: 'block',
 		y: 0,
 		opacity: 1,
 		transition: {
@@ -22,6 +23,9 @@ const variants = {
 		opacity: 0,
 		transition: {
 			y: { stiffness: 1000 },
+		},
+		transitionEnd: {
+			display: 'none',
 		},
 	},
 };
